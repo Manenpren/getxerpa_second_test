@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Listado de Categorías</h2>
+    <ul>
+        {% for category in categories %}
+            <li>
+                {{ category.FCNAME }}
+                <a href="{% url 'tacategory-update' category.pk %}">Editar</a>
+                <a href="{% url 'tacategory-delete' category.pk %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tacategory-create' %}">Crear Nueva Categoría</a>
+{% endblock %}

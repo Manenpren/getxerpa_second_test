@@ -1,0 +1,31 @@
+<!-- transaction-add.component.html -->
+<div class="container">
+  <h2 class="title">Agregar Transacción</h2>
+  <form (submit)="addTransaction()">
+    <div class="form-group">
+      <label class="label">ID:</label>
+      <input type="number" [(ngModel)]="id" name="id" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Descripción:</label>
+      <input type="text" [(ngModel)]="description" name="description" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Categoría:</label>
+      <input type="number" [(ngModel)]="category" name="category" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Monto:</label>
+      <input type="number" [(ngModel)]="amount" name="amount" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Fecha:</label>
+      <input type="text" [(ngModel)]="date" name="date" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Ignorar:</label>
+      <input type="checkbox" [(ngModel)]="ignore" name="ignore">
+    </div>
+    <button type="submit" class="button secondary-button">Agregar Transacción</button>
+  </form>
+</div>

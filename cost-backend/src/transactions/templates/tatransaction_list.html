@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Listado de Transacciones</h2>
+    <ul>
+        {% for transaction in transactions %}
+            <li>
+                {{ transaction.FCDESCRIPTION }}
+                <a href="{% url 'tatransaction-update' transaction.pk %}">Editar</a>
+                <a href="{% url 'tatransaction-delete' transaction.pk %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tatransaction-create' %}">Crear Nueva Transacción</a>
+{% endblock %}

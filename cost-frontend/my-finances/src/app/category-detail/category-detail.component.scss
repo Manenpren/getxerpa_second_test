@@ -1,0 +1,147 @@
+/* Agrega estos estilos en tu archivo category-detail.component.css */
+
+.category-detail {
+  padding: 20px;
+}
+
+.category-title {
+  font-size: 20px;
+  color: black;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.category-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.info-title {
+  font-size: 14px;
+  color: #666;
+}
+
+.info-value {
+  font-size: 18px;
+  color: black;
+}
+
+.info-value-highlight {
+  font-weight: bold;
+}
+
+.info-value-green {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.progress-container {
+  margin-top: 20px;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #9c27b0;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+}
+
+.transaction-list-title {
+  font-size: 18px;
+  color: #9c27b0;
+  margin-top: 20px;
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.transaction-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.transaction-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d1c4e9; /* Cambia el color a un morado más tenue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 0; /* Añade este estilo */
+}
+
+.transaction-description {
+  font-size: 16px;
+  color: black;
+  margin-right: 10px;
+}
+
+.transaction-time {
+  font-size: 12px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.transaction-amount {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.transaction-total-amount {
+  text-align: right;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.back-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #9c27b0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button:hover {
+  color: #7b1fa2;
+}

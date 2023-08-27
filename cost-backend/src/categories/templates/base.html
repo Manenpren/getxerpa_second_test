@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis finanzas</title>
+</head>
+<body>
+    <header>
+        <h1>Mis finanzas</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'category-list' %}">Categorías</a></li>
+                <li><a href="{% url 'transaction-list' %}">Transacciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Pie de página aquí -->
+    </footer>
+</body>
+</html>

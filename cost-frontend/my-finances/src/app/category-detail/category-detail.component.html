@@ -1,0 +1,41 @@
+<div *ngIf="category" class="category-detail">
+  <button class="back-button" (click)="goBack()"><----</button>
+  <h2 class="category-title">{{ category.name }}</h2>
+  <div class="category-info">
+    <div class="category-info-item">
+      <p class="info-title">Gasto Total</p>
+      <p class="info-value">{{ category.totalSpent | currency }}</p>
+    </div>
+    <div class="category-info-item">
+      <p class="info-title">Movimientos</p>
+      <p class="info-value">{{ category.transactions.length }}</p>
+    </div>
+  </div>
+  <div class="category-info">
+    <div class="category-info-item">
+      <p class="info-title">Presupuesto</p>
+      <p class="info-value info-value-highlight">{{ category.limit | currency }}</p>
+    </div>
+    <div class="category-info-item">
+      <p class="info-title">Disponible</p>
+      <p class="info-value info-value-green">{{ category.availableBalance | currency }}</p>
+    </div>
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar" [style.width]="category.spentPercentage + '%'">
+      {{ category.spentPercentage.toFixed(0) }}% del presupuesto gastado
+    </div>
+  </div>
+  <h3 class="transaction-list-title">Listado de Transacciones</h3>
+  <ul class="transaction-list">
+    <li *ngFor="let transaction of category.transactions" class="transaction-item">
+      <div class="transaction-content">
+        <div class="transaction-image">{{ transaction.description.charAt(0) }}</div>
+        <div class="transaction-details">
+          <p class="transaction-description">{{ transaction.description }}</p>
+          <p class="transaction-time">{{ transaction.date | date:'medium' }}</p>
+        </div>
+        <div class="transaction-amount">$ {{ transaction.amount }}</div>
+      </div>
+    </li>
+  </ul></div>

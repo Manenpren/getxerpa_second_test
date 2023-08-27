@@ -1,0 +1,24 @@
+<!-- category-list.component.html -->
+<div class="container">
+  <h3 class="title">Gastos por categoría</h3>
+  <div *ngFor="let category of categories; let i = index" (click)="viewCategoryDetail(category)">
+    <span class="fake-link" (click)="viewCategoryDetail(category)">
+      <h3>{{ category.name }}</h3>
+      
+      <div class="progress-container">
+        <div class="progress-values">
+          <span class="amount">{{ category.totalSpent | currency }}</span>
+          <span class="limit">{{ category.limit | currency }}</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [style.width]="(category.totalSpent / category.limit) * 100 + '%'">
+            {{ (category.totalSpent / category.limit) * 100 | number:'1.0-0' }}%
+          </div>
+        </div>
+        <p class="percentage">{{ (category.totalSpent / category.limit) * 100 | number:'1.0-0' }}% del presupuesto gastado</p>
+      </div>
+    
+      <hr class="divider" *ngIf="i !== categories.length - 1">
+    </span>
+  </div>
+</div>

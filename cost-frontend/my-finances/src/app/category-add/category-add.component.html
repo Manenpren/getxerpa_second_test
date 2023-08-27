@@ -1,0 +1,19 @@
+<!-- category-add.component.html -->
+<div class="container">
+  <h2 class="title">Agregar Categoría</h2>
+  <form (submit)="addCategory()">
+    <div class="form-group">
+      <label class="label">ID:</label>
+      <input type="number" [(ngModel)]="id" name="id" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Nombre:</label>
+      <input type="text" [(ngModel)]="name" name="name" class="input-field" required>
+    </div>
+    <div class="form-group">
+      <label class="label">Límite:</label>
+      <input type="number" [(ngModel)]="limit" name="limit" class="input-field" required>
+    </div>
+    <button type="submit" class="button secondary-button">Agregar Categoría</button>
+  </form>
+</div>

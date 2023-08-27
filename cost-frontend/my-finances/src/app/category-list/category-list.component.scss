@@ -1,0 +1,75 @@
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 300px;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  background-color: #9c27b0;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.progress-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+}
+
+.amount {
+  font-weight: bold;
+  color: black;
+}
+
+.limit {
+  opacity: 0.7;
+  color: black;
+}
+
+.percentage {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.total-spent {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+}
+
+.details button {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fake-link {
+  cursor: pointer;
+}
+
+.fake-link:hover {
+  color: #7b1fa2;
+  text-decoration: none;
+}
