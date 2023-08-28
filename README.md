@@ -1,5 +1,3 @@
-# NOTE: My repo modification is in repo DOCKER PYTHON(django), JAVASCRIPT(Angular)
-
 # Getxerpa use_case test
 
 El proyecto desarrolla un ejercicio de un requerimiento real de un sistema de monitoreo de finanzas personales
