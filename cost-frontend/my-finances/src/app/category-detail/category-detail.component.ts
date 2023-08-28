@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-category-detail',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class CategoryDetailComponent implements OnInit {
   category: any;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.category = history.state.category;
@@ -27,4 +28,24 @@ export class CategoryDetailComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['/categories']);
   }  
+
+  confirmDeleteTransaction(transaction: any): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: { message: '¿Estás seguro de que deseas eliminar esta transacción?' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.deleteTransaction(transaction);
+      }
+    });
+  }
+
+  deleteTransaction(transaction: any): void {
+    this.apiService.deleteTransaction(transaction.id).subscribe(() => {
+      // Actualiza los detalles de la categoría después de eliminar la transacción
+      this.category.transactions = this.category.transactions.filter(t => t !== transaction);
+    });
+  }
+  
 }

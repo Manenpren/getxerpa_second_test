@@ -17,7 +17,8 @@
         </div>
         <p class="percentage">{{ (category.totalSpent / category.limit) * 100 | number:'1.0-0' }}% del presupuesto gastado</p>
       </div>
-    
+      <button class="delete-button" (click)="confirmDelete(category)">Eliminar</button>
+      
       <hr class="divider" *ngIf="i !== categories.length - 1">
     </span>
   </div>

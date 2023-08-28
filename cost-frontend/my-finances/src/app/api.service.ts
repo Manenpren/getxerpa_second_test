@@ -30,5 +30,13 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}apitransactions/`);
   }
 
-  // Implementa más métodos según tus necesidades para transacciones u otras acciones.
+  deleteCategory(categoryId: number): Observable<any> {
+    const url = `${this.baseUrl}/apicategories/${categoryId}/`;
+    return this.http.delete(url);
+  }
+
+  deleteTransaction(transactionId: number): Observable<any> {
+    const url = `${this.baseUrl}/apitransactions/${transactionId}/`;
+    return this.http.delete(url);
+  }
 }

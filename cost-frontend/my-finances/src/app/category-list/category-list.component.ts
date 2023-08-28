@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog'; // Importa el servicio MatDialog
 
 @Component({
   selector: 'app-category-list',
@@ -11,7 +12,7 @@ export class CategoryListComponent implements OnInit {
   categories: any[] = [];
   transactions: any[] = [];
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.loadCategories();
@@ -53,4 +54,22 @@ export class CategoryListComponent implements OnInit {
     this.router.navigateByUrl('/category-detail', { state: { category } });
   }
   
+  confirmDelete(category: any): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: { message: '¿Estás seguro de que deseas eliminar esta categoría?' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.deleteCategory(category);
+      }
+    });
+  }
+
+  deleteCategory(category: any): void {
+    this.apiService.deleteCategory(category.id).subscribe(() => {
+      // Actualiza la lista de categorías después de eliminar
+      this.categories = this.categories.filter(c => c !== category);
+    });
+  }
 }

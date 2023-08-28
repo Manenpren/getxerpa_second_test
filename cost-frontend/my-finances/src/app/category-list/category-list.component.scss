@@ -73,3 +73,59 @@
   color: #7b1fa2;
   text-decoration: none;
 }
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #c0392b;
+}
+
+/* Estilos para el diálogo de confirmación */
+.confirmation-dialog {
+  padding: 20px;
+  text-align: center;
+}
+
+.confirmation-message {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 8px 20px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.confirm-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.confirm-button:hover,
+.cancel-button:hover {
+  background-color: #c0392b;
+}
