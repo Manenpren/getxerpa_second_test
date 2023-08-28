@@ -7,7 +7,6 @@ import { ApiService } from '../api.service';
   styleUrls: ['./category-add.component.scss']
 })
 export class CategoryAddComponent {
-  id = 0;
   name = '';
   limit = 0;
 
@@ -15,13 +14,11 @@ export class CategoryAddComponent {
 
   addCategory() {
     this.apiService.createCategory({
-      id: this.id,
       name: this.name,
       limit: this.limit,
     }).subscribe(
       response => {
         // Categoría agregada exitosamente
-        this.id = 0; // Limpiar campos
         this.name = '';
         this.limit = 0;
       },

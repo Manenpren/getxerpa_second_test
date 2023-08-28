@@ -7,7 +7,6 @@ import { ApiService } from '../api.service';
   styleUrls: ['./transaction-add.component.scss']
 })
 export class TransactionAddComponent {
-  id = 0;
   description = '';
   category = 0;
   amount = 0;
@@ -18,7 +17,6 @@ export class TransactionAddComponent {
 
   addTransaction() {
     const transactionData = {
-      id: this.id,
       description: this.description,
       category: this.category,
       amount: this.amount,
@@ -29,7 +27,6 @@ export class TransactionAddComponent {
     this.apiService.createTransaction(transactionData).subscribe(
       response => {
         // Transacción agregada exitosamente
-        this.id = 0; // Limpiar campos
         this.description = '';
         this.category = 0;
         this.amount = 0;

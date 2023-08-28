@@ -15,7 +15,7 @@ class TACategoryListView(ListView):
 class TACategoryCreateView(CreateView):
     model = TACategory
     template_name = 'tacategory_form.html'
-    fields = ['name', 'limit']
+    fields = '__all__'
     success_url = reverse_lazy('category-list')
     success_message = "New transaction added succesfull"
 

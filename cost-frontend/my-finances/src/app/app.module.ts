@@ -7,8 +7,10 @@ import { CategoryAddComponent } from './category-add/category-add.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { TransactionAddComponent } from './transaction-add/transaction-add.component';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
-import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component'; // Importa HttpClientModule
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientMo
     CategoryAddComponent,
     CategoryListComponent,
     CategoryDetailComponent,
-    TransactionAddComponent
+    TransactionAddComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

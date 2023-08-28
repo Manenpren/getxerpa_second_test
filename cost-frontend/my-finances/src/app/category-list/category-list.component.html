@@ -1,7 +1,7 @@
 <!-- category-list.component.html -->
 <div class="container">
   <h3 class="title">Gastos por categoría</h3>
-  <div *ngFor="let category of categories; let i = index" (click)="viewCategoryDetail(category)">
+  <div *ngFor="let category of categories; let i = index">
     <span class="fake-link" (click)="viewCategoryDetail(category)">
       <h3>{{ category.name }}</h3>
       
@@ -17,9 +17,9 @@
         </div>
         <p class="percentage">{{ (category.totalSpent / category.limit) * 100 | number:'1.0-0' }}% del presupuesto gastado</p>
       </div>
-      <button class="delete-button" (click)="confirmDelete(category)">Eliminar</button>
       
-      <hr class="divider" *ngIf="i !== categories.length - 1">
     </span>
+    <button class="delete-button" (click)="confirmDelete(category)">Eliminar</button>
+    <hr class="divider" *ngIf="i !== categories.length - 1">
   </div>
 </div>

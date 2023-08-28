@@ -13,7 +13,7 @@ class TATransactionListView(ListView):
 class TATransactionCreateView(CreateView):
     model = TATransaction
     template_name = 'tatransaction_form.html'
-    fields = ['description', 'category', 'amount', 'date', 'ignore']
+    fields = '__all__'
     success_url = reverse_lazy('transaction-list')
     success_message = "New transaction added succesfull"
 

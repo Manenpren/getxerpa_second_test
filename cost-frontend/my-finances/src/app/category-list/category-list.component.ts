@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog'; // Importa el servicio MatDialog
+import { MatDialog } from '@angular/material/dialog'; 
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component'
 
 @Component({
   selector: 'app-category-list',
@@ -59,7 +60,7 @@ export class CategoryListComponent implements OnInit {
       data: { message: '¿Estás seguro de que deseas eliminar esta categoría?' }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
         this.deleteCategory(category);
       }

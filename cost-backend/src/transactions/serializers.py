@@ -3,7 +3,7 @@ from .models import TATransaction
 from categories.models import TACategory
 
 class TATransactionSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(source='FIIDTRANSACTION')
+    id = serializers.IntegerField(read_only=True,source='FIIDTRANSACTION')
     description = serializers.CharField(source='FCDESCRIPTION')
     category = serializers.PrimaryKeyRelatedField(queryset=TACategory.objects.all(), source='FIIDCATEGORIE')
     amount = serializers.DecimalField(source='FIAMOUNT', max_digits=10, decimal_places=2)
@@ -12,4 +12,4 @@ class TATransactionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = TATransaction
-        fields = ['description', 'category', 'amount', 'date', 'ignore']
+        fields = ['id', 'description', 'category', 'amount', 'date', 'ignore']
