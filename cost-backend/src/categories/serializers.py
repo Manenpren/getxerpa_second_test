@@ -9,6 +9,6 @@ class TACategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TACategory
-        fields = ['id', 'name', 'limit']
+        fields = ['name', 'limit']
 
 

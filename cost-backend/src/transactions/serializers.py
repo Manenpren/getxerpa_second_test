@@ -12,4 +12,4 @@ class TATransactionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = TATransaction
-        fields = ['id', 'description', 'category', 'amount', 'date', 'ignore']
+        fields = ['description', 'category', 'amount', 'date', 'ignore']
