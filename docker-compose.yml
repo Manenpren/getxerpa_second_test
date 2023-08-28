@@ -1,12 +1,13 @@
 version: '3'
 services:
-  costs-frontend:
-    build:
-      context: ./cost-frontend/Docker/app/.
-    ports:
-      - "80:80"
   costs-backend:
     build:
-      context: ./cost-backend/Docker/app/.
+      context: ./cost-backend/src/.
     ports:
       - "8000:8000"
+  costs-frontend:
+    build:
+      context: ./cost-frontend/my-finances/.
+    ports:
+      - "8080:80"
+

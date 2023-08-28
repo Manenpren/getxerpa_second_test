@@ -10,10 +10,7 @@ El ejercicio se desarrollara en los siguientes lenguajes.
 - Javascript + Angular
 - Se propuso dockerizar en dos imagenes una de python y otra de javascript
 
-## Deadline
-Para este ejercicio se dio 48 horas como máximo
-
-# Project Name: Python Clean Architecture Microservices Templates
+# Project Name: Herramienta de analisis de gastos
 
 ### Construction backend 🛠️
 * **Language:** Python 3
@@ -28,42 +25,36 @@ Para este ejercicio se dio 48 horas como máximo
 
 ## Installation and execution
 
-- Clone or Fork the project.
-- Copy **.env.example** to **.env**. It will be used as environment variables source.
-- Inside Docker/app folders of ecommerce-service and delivery-services:
-* Copy **.env.example** to **.env**. It will be used as environment variables source.
+- Clona el proyecto
 
-Run ```docker-compose``` command inside **docker-python** folder.
+Corre ```docker-compose``` los comandos dentro de la carpeta **getxerpa_second_test** 
 
-* Building the containers: ```docker-compose build```
+* Crear los contenedores: ```docker-compose build```
 
-* Starting the services: ```docker-compose up -d```
+* Inicia los servicios: ```docker-compose up -d```
 
-* Stoping the services: ```docker-compose stop```
+* Para detener los servicios: ```docker-compose stop```
 
 El proyecto tiene dos contenedores, uno de frotend y otro de backend con los siguientes puertos
-- costs-frontend: 80
+- costs-frontend: 8080
 - costs-backend: 8000
-
-Check the **.env.example** file to change these or any other params.
-
-### Testing ⚙️
-
-
-To run manual tests, the `req.http` file is included with requests to localhost. Install `REST Client` for Visual Studio Code or` RESTer HTTP Client` for Sublime Text to be able to perform file requests from the same text editor.
-
-To run the tests:
-
-- Have the services running using `docker-compose up`.
-- In another console, run `docker exec ecommerce-service python -m pytest -rP`.
-
-The `-rP` flag is optional, and is used to display in the console the `print()` done during the tests, otherwise `pytest` will hide them, only showing them in case the test has failed.
-
-Repository tests write data to container databases, but write them to temporary tables or collections with the suffix "\ _test" that are deleted once they are finished, so as not to carry the actual data. Bear in mind that in the case of Firestore there is no data persistence yet; if the service is lowered and raised again, the previous data is lost.
 
 ### How i use ⚙️
 
-To test the endpoint, i include a postman colection with the details in /postman_collection/Enviame test.postman_collection.json file, feel fre to use.
+Una vez iniciado los contenedores se tienen dos rutas principales
+- http://localhost:8000/ **Pagina principal de servicios de backend** 
+- http://localhost:8080/ **Pagina principal de servicios de frontend** 
+
+La documentacion de la api se efectuo de manera automatica con Django REST framework, el cual puedes consultar en esta direccion http://localhost:8000/.
+
+Tambien se generaron rutas desde el backend para modificar la base de datos con los cruds basicos y estan en las siguientes rutas:
+
+ - http://localhost:8000/categories/
+ - http://localhost:8000/transactions/
+
+La pagina principal de los serviicios de frontend tiene el listado de categorias desde ahi pulsando en cada categoria podemos ver el detalle de la misma, ademas se pueden agregr y eliminar categorias desde el front, aunque no se pedia en el ejercicio deje una barra de navegacion muy sencilla para probar las funcionalidades.
+
+Me disculpo por el css la realidad es que no me esmere en diseño si no que funcionara lo que se pedia en el enunciado!.
 
 ### Autor ✒️
 
